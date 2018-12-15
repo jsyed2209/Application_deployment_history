@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Dependency Result</title>
+	<link rel="stylesheet" href="../static/reset.css" type="text/css">
+	<link rel="stylesheet" href="../static/style1.css" type="text/css">
+	<script src="../static/js/jquery-2.1.4.min.js"></script>
+	<script src="../static/js/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+	<script src="../static/js/jquery-1.9.0.js"></script>
+	<script src="../static/js/script_output.js"></script>
+
+</head>
+
+<body>
+
+	<div class="head-conatiner">
+		<h1 class='blink_me'>LGDOP</h1>
+		<h2 class='blink_me'>Patch Dependency Check</h2>
+	</div>
+	<div class='main-container'>
+		<table class="tbl-output" border = 1 >
+            <caption>Input Data</caption>
+             {% for key, value in dependency_check_output.iteritems() %}
+			 		{% if key != 'SIT' and key != 'UAT' and key != 'PROD' and key != 'Conflicts' %}
+			 		
+			<thead>
+				<tr>
+					<th>{{key}}</th>
+                    <th>{{value}}</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+			<tfoot></tfoot>
+					{% endif %}
+            {% endfor %}
+		</table>
+		<table class="tbl-output1" border = 1 >
+            <caption>SIT</caption>
+             {% for key, value in dependency_check_output.iteritems() %}
+			 		{% if key == 'SIT'%}
+					   	{% for key1,value1 in value.iteritems() %}
+							
+
+			<thead>
+				<tr>
+						<th>{{key1}}</th>
+                    	<th>{{value1.split('-- ')[0]}}</th>
+						<th>{{value1.split('-- ')[1]}}</th>
+						
+                    	
+					
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+			<tfoot></tfoot>
+						{% endfor %}
+					{% endif %}
+            {% endfor %}
+		</table>
+		<table class="tbl-output1" border = 1 >
+            <caption>UAT</caption>
+             {% for key, value in dependency_check_output.iteritems() %}
+			 		{% if key == 'UAT'%}
+					   	{% for key1,value1 in value.iteritems() %}
+			 		
+			<thead>
+				<tr>
+						<th>{{key1}}</th>
+                    	<th>{{value1.split('-- ')[0]}}</th>
+						<th>{{value1.split('-- ')[1]}}</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+			<tfoot></tfoot>
+						{% endfor %}
+					{% endif %}
+            {% endfor %}
+		</table>
+		<table class="tbl-output1" border = 1 >
+            
+             {% for key, value in dependency_check_output.iteritems() %}
+			 		{% if key == 'PROD'%}
+					   	{% for key1,value1 in value.iteritems() %}
+			<caption>PROD</caption>		
+			<thead>
+				<tr>
+					<th>{{key1}}</th>
+                    <th>{{value1}}</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+			<tfoot></tfoot>
+						{% endfor %}
+					{% endif %}
+            {% endfor %}
+		</table>
+		<table class="tbl-output1" border = 1 >
+            <caption>Conflicts</caption>
+             {% for key, value in dependency_check_output.iteritems() %}
+			 		{% if key == 'Conflicts'%}
+					   	{% for key1,value1 in value.iteritems() %}
+			 		
+			<thead>
+				<tr>
+					<th>{{key1}}</th>
+                    <th>{{value1}}</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+			<tfoot></tfoot>
+						{% endfor %}
+					{% endif %}
+            {% endfor %}
+		</table>
+		
+</div>
+</body>
+
+</html>

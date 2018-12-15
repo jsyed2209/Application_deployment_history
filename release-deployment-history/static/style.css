@@ -1,0 +1,218 @@
+.body
+{
+	font-family: Arial, Helvetica, sans-serif;
+	width:970px;
+	margin: auto;
+	font-size: 13px;
+	
+}
+
+/*.head-container
+{
+	height: 100px;
+	margin: 40px 30px 0px 120px;
+	
+	
+}*/
+
+.head-container
+{
+	height: 68px;
+	font-weight: bold;
+	font-size: 1.5em;
+	text-align: center;
+	border: 1px solid #000000;
+	background-color: #0000CD;
+	color: #ffffff;
+	padding-top: 30px;
+	width:810px;
+	float : left;
+
+
+}
+
+
+.ml9 {
+  position: relative;
+  font-weight: 200;
+  font-size: 2em;
+}
+
+.ml9 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml9 .letter {
+  transform-origin: 50% 100%;
+  display: inline-block;
+  line-height: 1em;
+}
+
+
+
+.head-container h1:hover
+{
+	color: #ff3300;
+}
+
+.dependency
+{
+	
+	border : 2px solid #000000;
+	margin-bottom: 30px;
+	margin-top: 10px;
+	background-color:grey
+
+
+}
+.dependency h1
+{
+	font-weight: bold;
+	font-size: 2em;
+	text-align: center;
+	margin-top: 30px;
+	color : #FFFFFF;
+}
+
+
+
+
+/*Style for registration page that is for form*/
+form {
+	margin: 20px 0;
+	font-size:1.2em;
+	color :#ffffff;
+	font-weight: bold;
+}
+form fieldset {
+	border: 1px solid;
+	border-radius: 10px;
+	padding:25px;
+	width:500px;
+	margin: auto;
+	line-height: 30px;
+}
+form fieldset legend {
+	padding: 5px;
+}
+
+.form-element {
+	margin-bottom: 10px;
+}
+.horizontal-form .form-element .inline-labels {
+	display:inline-block;
+	width: 120px;
+	margin-right:5px;	
+	overflow : hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.form-element input[type="text"],  
+.form-element select, {
+	padding: 3px;
+	border: 1px solid #a1a1a1;
+	border-radius: 5px;
+	width:300px;
+}
+.form-element textarea {
+	height:9em;
+	max-height:12em;
+	max-width:500px;
+}
+.form-element select option {
+	font-size:14px;
+	font-weight:normal;
+}
+input, select, textarea {
+  -webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.form-element .has-error div {
+	margin-top:5px;
+	color: #ff0000;
+	text-indent: 3px;
+}
+.form-element .has-error input {
+	border-color: #ff0000 !important;
+	color: #ff0000 !important;
+}
+
+/** Horizontal Form **/
+.horizontal-form .form-element label {
+	display :inline-block;
+	width: 200px;
+	vertical-align: top;
+	margin-top:5px;
+}
+.horizontal-form .form-element .form-control {
+	display:inline-block;
+	width:260px;
+}
+.horizontal-form .form-element .form-control input[type="text"] {
+	display:inline-block;
+	width:260px;
+	outline:0;
+}
+
+.btn {
+	border: 2px solid #919191;
+	color: #fff;
+	background-color: #959595;
+	padding:5px 8px;
+	font-weight:bold;
+	font-size:1.3em;
+	cursor:pointer;
+	border-radius:3px;
+	box-shadow: inset 10px 4px 4px #cfcfcf;
+}
+.btn-container {
+	text-align: center;
+	padding:15px;
+}
+.terms
+{
+	text-align: center;
+	margin-top: 20px;
+}
+
+
+/*End of the form style*/
+
+.haserror
+{
+	width:300px;
+	display: block;
+	background-color: #ff0000;
+	color:#ffffff;
+	
+}
+.controlerror
+{
+	border:1px solid #ff0000;
+}
+.label
+{
+	color: #ff0000;
+}
+#termsabove
+{
+	width:490px;
+	text-align: center;
+}
+.Terms
+{
+	text-align: center;
+	margin-left: 103px;
+}
+
+
+
+
+
+
