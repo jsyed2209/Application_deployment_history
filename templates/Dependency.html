@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Dependency</title>
+	<meta charset="UTF-8">
+
+	
+	<link rel="stylesheet" href="../static/reset.css" type="text/css">
+	<link rel="stylesheet" href="../static/style.css" type="text/css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+	<script src="../static/js/jquery-2.1.4.min.js"></script>
+	<script src="../static/js/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+	<script src="../static/js/jquery-1.9.0.js"></script>
+	<script src="../static/js/script.js"></script>
+
+</head>
+
+<body>
+	<div class='body'>
+		<div class="head-container">
+	<!--	<div class='image-box'> <img src={{ url_for('static', filename='LG.jpg') }} class="image "> </div>  -->
+	    
+		<h1 class="ml9">
+  		<span class="text-wrapper">
+    	<span class="letters">LGDOP</span>
+		</h1>
+		</div>
+		<dev class='image-box'> <img src='../static/img/LG.jpg' class="image "></dev>
+		<div class="main-container">
+
+			<div class="dependency" id="checkDependency">
+				<h1>Patch Dependency Check</h1>
+
+				<form class="horizontal-form"  action='/dependency_check_output' method="POST" id="frmCandidateInfo">
+					<fieldset>
+						<legend>Inputs Required</legend>
+
+						<div class="form-element">
+							<label for="txtRMticket"> RM ticket *</label>
+							<div class="form-control">
+								<input type="text" name="RMticket" id="txtRMticket" maxlength="30" placeholder="Enter the RM ticket">
+								<span class="haserror"></span>
+							</div>
+						</div>
+						
+						<div class="form-element">
+							<label for="ddlApplication">Application *</label>
+							<!-- select multiple to make it allow you to select multiple values -->
+							<div class="form-control">
+								<select id="ddlApplication" name="application" >
+									<option value="-1">Please select the application...</option>
+									<option value="ASAP">ASAP</option>
+									<option value="Clarify">Clarify</option>
+									<option value="Kenan">Kenan</option>
+								</select>
+								<span class="haserror"></span>
+								
+							</div>
+						</div>
+
+						<div class="form-element">
+							<label for="ddlAffiliate">Affiliate *</label>
+							<!-- select multiple to make it allow you to select multiple values -->
+							<div class="form-control">
+								<select id="ddlAffiliate" name="affiliate" class='ddl'>
+									<option value="-1">Please select the affiliate...</option>
+									<option value="AT">AT</option>
+									<option value="ch">CH</option>
+									<option value="CZ">CZ</option>
+									<option value="NL">NL</option>
+									<option value="RO">RO</option>
+								</select>
+								<span class="haserror"></span>
+							</div>
+						</div>
+
+					<div class="form-element">
+							<label>Prod Inclusion</label>
+							<div class="form-control" id="radio">
+								<label class="inline-labels">
+									<input type="radio" id="rdoYes" name="prod" value="Yes" > Yes
+								</label>
+								<label class="inline-labels">
+									<!-- IMPORTANT -- ID has to be unique. -->
+									<input id="rdoNO" type="radio" name="prod" value="No"> NO
+								</label>
+								<span class="haserror"></span>
+							</div>
+						</div>
+					
+
+					</fieldset>
+					<div class="btn-container">
+						<input type="submit" value="Submit" class="btn" Id='submitBtn'>
+						<input type="reset" value="Clear" class="btn">
+					</div>
+				</form>
+			</div>
+
+	</div>
+
+		</div>
+
+</body>
+
+</html>
