@@ -1,8 +1,5 @@
 
-import dash
-from dash.dependencies import Input, Output
-import dash_core_components as dcc
-import dash_html_components as html
+
 from flask import Flask, session, render_template, request, redirect, json,url_for
 #from pandas_datareader import data as web
 import datetime

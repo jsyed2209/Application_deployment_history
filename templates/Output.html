@@ -16,12 +16,12 @@
 <body>
 
 	<div class="head-conatiner">
-		<h1 class='blink_me'>LGDOP</h1>
-		<h2 class='blink_me'>Patch Dependency Check</h2>
+		<h1 class='blink_me'>Clarify</h1>
+		<h2 class='blink_me'>Code Dependency Check</h2>
 	</div>
 	<div class='main-container'>
 		<table class="tbl-output" border = 1 >
-            <caption>Input Data</caption>
+            <caption style="color:#B0C4DE">Input Data</caption>
              {% for key, value in dependency_check_output.iteritems() %}
 			 		{% if key != 'SIT' and key != 'UAT' and key != 'PROD' and key != 'Conflicts' %}
 			 		
@@ -39,7 +39,7 @@
             {% endfor %}
 		</table>
 		<table class="tbl-output1" border = 1 >
-            <caption>SIT</caption>
+            <caption style="color:#B0C4DE">SIT</caption>
              {% for key, value in dependency_check_output.iteritems() %}
 			 		{% if key == 'SIT'%}
 					   	{% for key1,value1 in value.iteritems() %}
@@ -48,9 +48,9 @@
 			<thead>
 				<tr>
 						{% if value1.split('-- ')[1] == 'Current' %}
-						<th style="background-color:maroon" >{{key1}}</th>
-                    	<th style="background-color:maroon">{{value1.split('-- ')[0]}}</th>
-						<th style="background-color:maroon">{{value1.split('-- ')[1]}}</th>
+						<th style="background-color:#2F4F4F;color:#B0C4DE" >{{key1}}</th>
+                    	<th style="background-color:#2F4F4F;color:#B0C4DE">{{value1.split('-- ')[0]}}</th>
+						<th style="background-color:#2F4F4F;color:#B0C4DE">{{value1.split('-- ')[1]}}</th>
 						{%else%}
 						<th>{{key1}}</th>
                     	<th>{{value1.split('-- ')[0]}}</th>
@@ -69,16 +69,16 @@
             {% endfor %}
 		</table>
 		<table class="tbl-output1" border = 1 >
-            <caption>UAT</caption>
+            <caption style="color:#B0C4DE">UAT</caption>
              {% for key, value in dependency_check_output.iteritems() %}
 			 		{% if key == 'UAT'%}
 					   	{% for key1,value1 in value.iteritems() %}
 			 		
 			<thead>
 				<tr>    {% if value1.split('-- ')[1] == 'Current' %}
-						<th style="background-color:maroon" >{{key1}}</th>
-                    	<th style="background-color:maroon">{{value1.split('-- ')[0]}}</th>
-						<th style="background-color:maroon">{{value1.split('-- ')[1]}}</th>
+						<th style="background-color:#2F4F4F;color:#B0C4DE" >{{key1}}</th>
+                    	<th style="background-color:#2F4F4F;color:#B0C4DE">{{value1.split('-- ')[0]}}</th>
+						<th style="background-color:#2F4F4F;color:#B0C4DE">{{value1.split('-- ')[1]}}</th>
 						{%else%}
 						<th>{{key1}}</th>
                     	<th>{{value1.split('-- ')[0]}}</th>
@@ -97,7 +97,7 @@
             
              {% for key, value in dependency_check_output.iteritems() %}
 			 		{% if key == 'PROD'%}
-					 	<caption>PROD</caption>
+					 	<caption style="color:#B0C4DE">PROD</caption>
 					   	{% for key1,value1 in value.iteritems() %}
 					
 			<thead>
@@ -114,8 +114,8 @@
 					{% endif %}
             {% endfor %}
 		</table>
-		<table class="tbl-output1" border = 1 >
-            <caption>Conflicts</caption>
+	<!--	<table class="tbl-output1" border = 1 >
+            <caption style="color:#B0C4DE">Conflicts</caption>
              {% for key, value in dependency_check_output.iteritems() %}
 			 		{% if key == 'Conflicts'%}
 					   	{% for key1,value1 in value.iteritems() %}
@@ -133,7 +133,7 @@
 						{% endfor %}
 					{% endif %}
             {% endfor %}
-		</table>
+		</table>  -->
 		
 </div>
 </body>
