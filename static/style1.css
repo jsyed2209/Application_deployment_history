@@ -15,7 +15,7 @@ body
 	text-align: center;
 	border: 1px solid #000000;
 	/*background-color: #0000CD;*/
-	background-color: #B0C4DE;
+	background-color: #AC2832;
 	color: #000000;
 	padding-top: 30px;
 }
@@ -25,16 +25,17 @@ body
 {
 	border : 2px solid #000000;
 	margin-top: 10px;
-	background-color:#2F4F4F;
+	background-color:#DFD297;
 }
 
 /*Css for Table*/
 
 .tbl-output {
-	width: 30%;
+	width: 20%;
 	/*font-family : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
 	font-family :  sans-serif;
-    margin: 0% 35% 0% 35%;
+	 margin: 0% 40% 2% 40%;
+   
 }
 .tbl-output caption {
 	font-size: 1.5em;
@@ -58,18 +59,17 @@ body
 	/*background-color: #330000;*/
 	color : #000000;
     font-weight:bold;
-	background-color: #B0C4DE;
+	background-color: #AC2832;
+	font-size: 1em;
 }
 
-.table
-{
-	margin-bottom: 20%;
-}
+
 
 
 .tbl-output1 {
 	font-family : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0% 1% 5% 1%;
+     margin: 0% 25% 30% 25%;
+	 width:50%;
 	display: inline-block;
 	display:inline;
 	
@@ -82,19 +82,32 @@ body
 	
 }
 .tbl-output1 th, .tbl-output1 td {
-	text-align: left;
+	text-align: Center;
 	padding: 4px;
 	border : 1px solid;
 	vertical-align: middle;
+	font-weight:bold;
 }
-/*
-.tbl-output thead th:nth-child(even) {
-	background-color: #f1f1f1;
-    font-weight:bold;
-    color : #000000;
-}*/
+
 .tbl-output1 thead th {
-	background-color: #B0C4DE;
+	background-color: #AC2832;
 	color : #000000;
     font-weight:bold;
+	font-size: 1em;
+}
+
+.btn {
+	border: 2px solid #919191;
+	color: #000;
+	background-color: #AC2832;
+	padding:5px 8px;
+	font-weight:bold;
+	font-size:1.3em;
+	cursor:pointer;
+	border-radius:3px;
+	/*box-shadow: inset 10px 4px 4px #cfcfcf;*/
+}
+.btn-container {
+	text-align: center;
+	padding:15px;
 }

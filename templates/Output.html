@@ -16,126 +16,91 @@
 <body>
 
 	<div class="head-conatiner">
-<!--	<dev> <img src='../static/img/a.jpg' class="image" style="float : left;width:16%;background-color:#B0C4DE;height: 98px;"></dev> -->
+<!--	<dev> <img src='../static/img/a.jpg' class="image" style="float : left;width:16%;background-color:#000000;height: 98px;"></dev> -->
 		<h1 class='blink_me1'>Clarify</h1>
 		<h2 class='blink_me1'>Code Dependency Check</h2>
-	<!--	<dev> <img src='../static/img/LG.jpg' class="image" style="width:16%;background-color:#B0C4DE;height: 98px;"></dev> -->
+	<!--	<dev> <img src='../static/img/LG.jpg' class="image" style="width:16%;background-color:#000000;height: 98px;"></dev> -->
 	</div>
 	<div class='main-container'>
 		<table class="tbl-output" border = 1 >
-            <caption style="color:#B0C4DE">Input Data</caption>
+            <caption style="color:#000000">Input Data</caption>
              {% for key, value in dependency_check_output.iteritems() %}
-			 		{% if key != 'SIT' and key != 'UAT' and key != 'PROD' and key != 'Conflicts' %}
+			 		{% if key != 'SIT' and key != 'UAT' and key != 'PROD' and key != 'Not Installed in SIT&UAT&PROD' %}
 			 		
 			<thead>
 				<tr>
 					<th>{{key}}</th>
-                    <th>{{value}}</th>
-					
-				</tr>
+					<th>{{value}}</th>
+                 </tr>
 			</thead>
-			<tbody>
+			<tbody> 
 			</tbody>
 			<tfoot></tfoot>
 					{% endif %}
             {% endfor %}
 		</table>
 		<table class="tbl-output1" border = 1 >
-            <caption style="color:#B0C4DE">SIT</caption>
-             {% for key, value in dependency_check_output.iteritems() %}
-			 		{% if key == 'SIT'%}
-					   	{% for key1,value1 in value.iteritems() %}
+            <caption style="color:#000000;text-align:center">Dependent Patches List</caption>
+             
 							
 
 			<thead>
-				<tr>
-						{% if value1.split('-- ')[1] == 'Current' %}
-						<th style="background-color:#2F4F4F;color:#B0C4DE" >{{key1}}</th>
-                    	<th style="background-color:#2F4F4F;color:#B0C4DE">{{value1.split('-- ')[0]}}</th>
-						<th style="background-color:#2F4F4F;color:#B0C4DE">{{value1.split('-- ')[1]}}</th>
-						{%else%}
-						<th>{{key1}}</th>
-                    	<th>{{value1.split('-- ')[0]}}</th>
-						<th>{{value1.split('-- ')[1]}}</th>
-						{% endif %}
+					<tr>
+						<th>Input RM should be installed</th>
+						<th>RM Ticket</th>
+                    	<th>Which is Currently</th>
 						
-                    	
-					
-				</tr>
+					</tr>
+				
 			</thead>
-			<tbody>
-			</tbody>
-			<tfoot></tfoot>
-						{% endfor %}
-					{% endif %}
-            {% endfor %}
-		</table>
-		<table class="tbl-output1" border = 1 >
-            <caption style="color:#B0C4DE">UAT</caption>
-             {% for key, value in dependency_check_output.iteritems() %}
-			 		{% if key == 'UAT'%}
+			{% for key, value in dependency_check_output.iteritems() %}
+			 		{% if key == 'SIT' or key == 'UAT' or key == 'PROD'%}
 					   	{% for key1,value1 in value.iteritems() %}
-			 		
-			<thead>
-				<tr>    {% if value1.split('-- ')[1] == 'Current' %}
-						<th style="background-color:#2F4F4F;color:#B0C4DE" >{{key1}}</th>
-                    	<th style="background-color:#2F4F4F;color:#B0C4DE">{{value1.split('-- ')[0]}}</th>
-						<th style="background-color:#2F4F4F;color:#B0C4DE">{{value1.split('-- ')[1]}}</th>
-						{%else%}
-						<th>{{key1}}</th>
-                    	<th>{{value1.split('-- ')[0]}}</th>
-						<th>{{value1.split('-- ')[1]}}</th>
-						{% endif %}
-				</tr>
-			</thead>
 			<tbody>
-			</tbody>
-			<tfoot></tfoot>
+					<tr> 
+							<!--{% if value1.split('-**-')[1] == 'Current'%}
+								<td style="background-color:#AC2832;color:#000000">{{value1.split('-**-')[1]}}</td>
+							{% elif value1.split('-**-')[1] != 'Current'%}	
+								<td style="background-color:#DFD297;color:#000000">{{value1.split('-**-')[1]}}</td>
+							{% endif %}	-->
+							    <td style="background-color:#DFD297;color:#000000">{{value1.split('-**-')[1]}}</td>
+								<td style="background-color:#DFD297;color:#000000" >{{key1}}</td>
+								<td style="background-color:#DFD297;color:#000000">in {{key}}</td>
+					</tr>
+			
 						{% endfor %}
-					{% endif %}
+					{% elif key == 'Not Installed in SIT&UAT&PROD'%}
+						{% for key1,value1 in value.iteritems() %}
+			
+					<tr>
+						<td style="background-color:#DFD297;color:#000000">{{value1.split('-**-')[1]}}</td>
+						<td style="background-color:#DFD297;color:#000000" >{{key1}}</td>
+                    	<td style="background-color:#DFD297;color:#000000">{{key}}</td>
+					</tr>
+			
+					 {% endfor %}
+					 {% endif %}
             {% endfor %}
+			</tbody>
+		<tfoot></tfoot>
 		</table>
-		<table class="tbl-output1" border = 1 >
-            
-             {% for key, value in dependency_check_output.iteritems() %}
-			 		{% if key == 'PROD'%}
-					 	<caption style="color:#B0C4DE">PROD</caption>
-					   	{% for key1,value1 in value.iteritems() %}
-					
-			<thead>
-				<tr>
-					<th>{{key1}}</th>
-                    <th>{{value1}}</th>
-					
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-			<tfoot></tfoot>
-						{% endfor %}
-					{% endif %}
-            {% endfor %}
-		</table>
-	<!--	<table class="tbl-output1" border = 1 >
-            <caption style="color:#B0C4DE">Conflicts</caption>
-             {% for key, value in dependency_check_output.iteritems() %}
-			 		{% if key == 'Conflicts'%}
-					   	{% for key1,value1 in value.iteritems() %}
-			 		
-			<thead>
-				<tr>
-					<th>{{key1}}</th>
-                    <th>{{value1}}</th>
-					
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-			<tfoot></tfoot>
-						{% endfor %}
-					{% endif %}
-            {% endfor %}
-		</table>  -->
+		
+		<div class="btn-container">
+		
+						
+						<button class="btn" onclick="goBack()">Home Page</button>
+						<button class="btn" onclick="CDC()">CDC Page</button>
+
+						<script>
+							function goBack() {
+								window.history.back();
+							}
+							function CDC() {
+								window.open('https://devops.upc.biz/cdc');
+							}
+						</script>
+						
+		</div>
 		
 </div>
 </body>

@@ -17,13 +17,13 @@
 
 .head-container
 {
-	height: 68px;
+	height: 70px;
 	font-weight: bold;
-	font-size: 1.5em;
+	font-size: 2em;
 	text-align: center;
 	/*border: 1px solid #000000;*/
-	background-color: #B0C4DE;
-	color: #000000;
+	background-color: #AC2832;
+	color: #ffffff;
 	padding-top: 30px;
 	width:655px;
 	float : left;
@@ -57,7 +57,7 @@
 
 .head-container h1:hover
 {
-	color: #ff3300;
+	color: #000000;
 }
 
 .dependency
@@ -66,7 +66,7 @@
 	border : 2px solid #000000;
 	margin-bottom: 30px;
 	margin-top: 10px;
-	background-color:#2F4F4F
+	background-color:#DFD297
 
 
 }
@@ -76,7 +76,7 @@
 	font-size: 2em;
 	text-align: center;
 	margin-top: 30px;
-	color : #FFFFFF;
+	color : #000000;
 }
 
 
@@ -86,7 +86,7 @@
 form {
 	margin: 20px 0;
 	font-size:1.2em;
-	color :#ffffff;
+	color :#000000;
 	font-weight: bold;
 }
 form fieldset {
@@ -118,6 +118,7 @@ form fieldset legend {
 	border: 1px solid #a1a1a1;
 	border-radius: 5px;
 	width:300px;
+	background-color:#DFD297;
 }
 .form-element textarea {
 	height:9em;
@@ -127,11 +128,13 @@ form fieldset legend {
 .form-element select option {
 	font-size:14px;
 	font-weight:normal;
+	background-color:#DFD297;
 }
-input, select, textarea {
+.form-element input, select, textarea {
   -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 	box-sizing: border-box;
+	background-color:#DFD297;
 }
 .form-element .has-error div {
 	margin-top:5px;
@@ -162,14 +165,15 @@ input, select, textarea {
 
 .btn {
 	border: 2px solid #919191;
-	color: #fff;
-	background-color: #959595;
+	color: #000;
+	background-color: #AC2832;
 	padding:5px 8px;
 	font-weight:bold;
 	font-size:1.3em;
 	cursor:pointer;
 	border-radius:3px;
-	box-shadow: inset 10px 4px 4px #cfcfcf;
+	
+	/*box-shadow: inset 10px 4px 4px #cfcfcf;*/
 }
 .btn-container {
 	text-align: center;

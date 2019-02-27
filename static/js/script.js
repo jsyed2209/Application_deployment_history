@@ -1,5 +1,8 @@
 var radio = '';
 var drpdwn = '';
+var RMstatus='';
+
+
 
 $('document').ready(function () {
 
@@ -46,10 +49,9 @@ function init() {
            RMticket();
            rdovalidation();
            dropdownsvalidation();
+ 
 
-        var RM = $('#txtRMticket').val();
-
-      if   (RM != '' && radio == true && drpdwn==true){
+      if (RMstatus==true && radio == true && drpdwn==true){
 		$.ajax({
 			url: '/submitDetails',
 			data: $('form').serialize(),
@@ -78,17 +80,24 @@ function init() {
 function RMticket() {
         var $txtRMticket= $('#txtRMticket');
         var value= $('#txtRMticket').val();
-        if (value== '') {
+        if (value== '' ) {
             $txtRMticket.parent().find('.haserror').show().html("RM ticket should not be empty");
+            $txtRMticket.addClass('controlerror');
+            $txtRMticket.parents('.form-element').addClass('label')
+        }
+		else if (/(RM-[0-9])/.test(value)==false){
+            $txtRMticket.parent().find('.haserror').show().html("RM ticket is not in correct format");
             $txtRMticket.addClass('controlerror');
             $txtRMticket.parents('.form-element').addClass('label')
         }
         else {
             $($txtRMticket).parent().find('.haserror').hide();
             $($txtRMticket).removeClass('controlerror');
-            $($txtRMticket).parents('.form-element').removeClass('label')
+            $($txtRMticket).parents('.form-element').removeClass('label');
+			RMstatus = true;
         }
 
+	
  }
 
 
